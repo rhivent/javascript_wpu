@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<style type="text/css">
+		*{
+			border: 2px solid #dedede;
+			padding:15px;
+			margin:15px;
+		}
+
+		html{
+			margin: 0;
+			padding: 0;
+		}
+
+		body{
+			max-width: 600px;
+			margin: 30px auto;
+			font-family: sans-serif;
+			color: #333;
+		}
+
+		/*p{ color:green; }*/
+		/*#b p{ color:green; }*/
+		/* Memilih secara spesifik
+		css tolong carikan element li yg dia anak ke 2 yg punya ul yg punya section dengan id="b" 
+		*/
+		/*ini adalah selector yg ada di css*/
+		/*section#b ul li:nth-child(2) { background-color: orange; }*/
+	</style>
+</head>
+<body>
+	<h2>DOM Manipulation Method</h2>
+	<ul>
+		<li><h3>Manipulasi Element</h3>
+			<ul>
+				<li>element.innerHTML</li>
+				<li>element.style.property</li>
+				<li>element.setAttribute()</li>
+				<li>element.classList</li>
+				<li>......</li>
+			</ul>
+		</li>
+		<li><h3>Manipulasi Node</h3>
+			<ul>
+				<li>document.createElement()</li>
+				<li>document.createTextNode()</li>
+				<li>node.appendChild()</li>
+				<li>node.insertBefore()</li>
+				<li>parentNode.removeChild()</li>
+				<li>parentNode.replaceChild()</li>
+				<li>......</li>
+			</ul>
+		</li>
+	</ul>
+	<h1 id="judul">Hellow World</h1>
+	<div id="container">
+		<section id="a">
+			<p class="p1">Paragraf 1</p>
+			<a href="https://maskdmac.om">IG</a>
+			<p class="p2">Paragraf 2</p>
+			<p class="p3">Paragraf 3</p>
+		</section>
+		<section id="b">
+			<p>paragraf 4</p>
+			<ul>
+				<li>item 1</li>
+				<li>item 2</li>
+				<li>item 3</li>
+			</ul>
+		</section>
+	</div>
+
+	<ul>
+		<p>manipulasi node (method Baru)</p>
+		<li>parentNode.append() : utk nambah di akhir parent</li>
+		<li>parentNode.append() : utk nambah di awal parent</li>
+		<li>childNode.before() : utk nambah di awal ditengah2 seperti insertBefore</li>
+		<li>childNode.after()</li>
+		<li>childNode.remove()</li>
+		<li>childNode.replaceWith()</li>
+	</ul>
+
+	<!-- <script type="text/javascript" src="dom_manipulation.js"></script> -->
+	<script type="text/javascript" src="dom_manipulation2.js"></script>
+</body>
+</html>

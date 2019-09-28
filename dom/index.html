@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web programming Unpas</title>
+</head>
+<body>
+	<h1>ADA JAVASCRIPT di console</h1>
+
+	<p>
+		"DOM adalah antarmuka pemrograman untuk HTML yg mereprenstasikan halaman web, sehingga program dapat mengubah dan memanipulasi strukturnya" - Mozilla
+	</p>
+	<p>
+		area yg isi dari website saja itu yg disebut <b>Document</b>
+	</p>
+	<p>
+		Object = sebuah type data dari javascript
+		Object ada properti (variabel object), dan method (isinya function)
+	</p>
+	<p>
+		Model = representasi terhadap sesuatu
+	</p>
+	<p>
+		DOM = Representasi elemen HTML pada dokumen menjadi sebuah object
+	</p>
+	<p>
+	console.log(document);
+	<br>
+	// output :<br>
+	// > HTMLDocument file:///home/lee/Desktop/javascript_project/wpu/dom/index.html
+	<br>
+	bisa di expand yg tanda segitiga, 
+	<br>
+	Semua isi didlm file akan di simpan dalam memori dalam bentuk POHON HIERARKI DOM (DOM Tree)
+	</p>
+
+	<p>Tiap2 tag dlm html direpresentasikan sebagai node atau simpul (dia adlah objek)
+	semua simpul berada di bawah parent simpul yaitu HTMLDocument </p>
+
+	diatas document ada objek yg lebih tinggi namanya window
+	<p>window</p>
+	<ul>
+		<li>document</li> --...
+		<li>history</li>
+		<li>location</li>
+	</ul>
+
+	<h2>DOM</h2>
+	<ul>
+		<li>Antarmuka pemrograman berbasis objek yg merepresentasikan dokumen web</li>
+		<li>DOM membuat seluruh komponen dari halaman web dapat diakses & dimanipulasi</li>
+		<li><p>Komponen</p>
+			<ul>
+				<li>Element HTML</li>
+				<li>Atribut</li>
+				<li>Text ,dll</li>
+			</ul>
+		</li>
+		<li>DOM dapat dimanipulasi (dibuat,diubah,dihapus) menggunakan javascript</li>
+	</ul>
+
+	<h3>Materi di seri</h3>
+	<ul>
+		<li>DOM Selection</li>
+		<li>DOM Manipulasi</li>
+		<li>DOM Traversal</li>
+		<li>Event Handling</li>
+		<li>Studi Kasus : membuat program2 sederhana</li>
+	</ul>
+
+
+	<script type="text/javascript" src="script.js"></script>
+	<!-- <script type="text/javascript" src="this.js"></script> -->
+	<!-- <script type="text/javascript" src="latihan.js"></script> -->
+</body>
+</html>

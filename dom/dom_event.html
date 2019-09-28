@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<p><b>Event</b> pada javascript merepresentasikan sebuah kejadian yg terjadi pada di dlm DOM</p>
+	<br />
+	<p>... kejadian tsb bisa dilakukan oleh user (mouse event, keyboard event, dll.)</p>
+	<p>ataupun dilakukan secara otomatis o/ API
+		(animasi selesai dijalankan, halaman selesai di load, dll)
+	</p>
+	<a href="https://developer.mozilla.org/en-US/docs/Web/Events">Web Event dari Mozilla</a>
+
+	Cara mendengarkan Event
+	<ul>
+		<li>
+			<h3>Event Handler</h3>
+			<ul>
+				<li>Inline HTML attribute</li>
+				<li>Element Method</li>
+			</ul>
+		</li>
+		<li>addEventListener()</li>
+	</ul>	
+	<p>
+		contohnya : on"event" ==> Event handler
+	</p>
+	<p><h4>Perbedaan</h4></p>
+	<p>Event handler hanya bisa melakukan perubahan sekali, jika diberikan perubahan lagi maka akan menimpa perubahan event yg sebelumya <b>BUKAN</b> menambah</p>
+
+	<p>addEventListener() akan menambah perubahan dari kita lakukan ketika click, atau apapun sehingga tidak menimpa perubahan yg lama</p>
+
+	<h1 id="judul">Hellow World</h1>
+	<div id="container">
+		<section id="a">
+			<p class="p1">Paragraf 1</p>
+			<a href="https://maskdmac.om">IG</a>
+			<p class="p2">Paragraf 2</p>
+			<p class="p3" onclick="ubahWarna()">Paragraf 3</p>
+		</section>
+		<section id="b">
+			<p class="p4">paragraf 4</p>
+			<ul>
+				<li>item 1</li>
+				<li>item 2</li>
+				<li>item 3</li>
+			</ul>
+		</section>
+	</div>
+
+	<script type="text/javascript" src="dom_event.js">
+		
+	</script>
+</body>
+</html>

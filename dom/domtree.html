@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Web programming Unpas</title>
+</head>
+<body>
+	<h1>Hellow World</h1>
+	<p>Paragraf 1</p>
+	<p>Paragraf 2</p>
+	<div>
+		<p>Paragraf 3</p>
+	</div>
+	<a href="halaman2.html">Ke Halaman 2</a>
+	<br>
+	<p>structur diatas dapat digambarkan dlm sperti di bawah</p>
+	<img src="domtree_example.png">
+	<img src="tipe_node.png">
+	<p>tipe atribut akan dihilangkan dan masuk kedalam tipe elemen</p>
+
+	<p>NodeList vs HTMLCollection</p>
+	<img src="node.png">
+	<img src="nodelist.png">
+	<img src="htmlcollection.png">
+	<ul>
+		<li>Keduanya merupakan <b>kumpulan node</b></li>
+		<li>struktur datanya mirip array</li>
+		<li><b>nodeist</b> dapat berisi node apapun sedangkan <b>HTMLCollection</b> harus berisi elemen HTML</li>
+		<li>HTMLCollection bersifat <b><i>live</i></b> sedangkan <b>nodelist</b> tidak</li>
+	</ul>
+
+	<hr/>
+	<hr/>
+	<h2>Struktur Hierarki DOM</h2>
+	<ul>
+		<li>Root Node
+			<ul>
+				<li><b>node yang menjadi sumber dari semua node lain di dlm DOM</b></li>
+				<li><b>document</b></li>
+			</ul>
+		</li>
+		<li>Parent Node
+			<p><b>node yg berada 1 tingkat diatas node lain </b></p>
+			<p><b>body adalh parent dari h1,p,p,div, dan a</b></p>
+		</li>
+		<li>Child Node
+			<p><b>node yg berada 1 tingkat dibawah node yg lain</b></p>
+			<p><b>h1 adalah child dari body</b></p>
+		</li>
+		<p><h2>ada juga sibling atau saudara dari child node</h2>, dll</p>
+	</ul>
+	<script type="text/javascript" src="script.js"></script>
+	<!-- <script type="text/javascript" src="this.js"></script> -->
+	<!-- <script type="text/javascript" src="latihan.js"></script> -->
+</body>
+</html>
