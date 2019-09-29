@@ -164,13 +164,13 @@ class Mhs4 {
 	}
 
 	main(jam){
-		this.energi += jam;
-		return `${this.nama}, Energimu bertambah menjadi ${this.energi}`;
+		this.energi -= jam;
+		return `${this.nama}, Energimu berkurang menjadi ${this.energi}`;
 	}
 
 	tidur(jam){
-		this.energi += jam;
-		return `${this.nama}, Energimu bertambah menjadi ${this.energi}`;
+		this.energi += 0.6*this.energi;
+		return `${this.nama}, Energimu bertambah menjadi ${Math.ceil(this.energi)}`;
 	}
 }
 
