@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Higher Order Function</title>
+</head>
+<body>
+	<p>Higher Order Function</p>
+	<p>Function yg beroperasi pada function yg lain.
+		Baik itu digunakan dalam argument maupun sebagai return value.
+		- https://eloquentjavascript.net
+	</p>
+	<p>di dlm js sebuah function disebut First Class function
+		inti dari js itu function, dmn function ini diperlakukan sebagai object di dlm js. --sitepoint.com
+	</p>
+
+	<p>
+		Penggunaan HOF utk abstraksi agar penggunaan kode lebih sederhana, semakin besar sebuah program, semkin tinggi kompleksitasnya, semakin membingungkan programmernya.
+	</p>
+	<p>Ada 2 cara rancang software: cara pertama adlaah utk membuat programmnya sesederhana mungkin shg jelas-jelas tidak ada kekurangannya dan cara lainnya adlah utk membuat programmnya se-kompleks mungkin shg tidak ada kekurangan yg jelas 
+	- C.A.R Hoare, 1980 ACM Turin Award Lecture</p>
+	<p>dengan membuat semua ke dalam function kita menggunakan pendekatan <b>Functional Programming</b></p>
+	<script type="text/javascript">
+		function kerjakanTugas(matakuliah,selesai){
+			console.log(`Mulau mengerjakan tugas ${matakuliah} ...`);
+			selesai();
+
+		}
+
+		function selesai(){
+			alert('Selesai mengerjakan tugas!');
+		}
+		// kerjakanTugas adlah higher order function 
+		kerjakanTugas('web',selesai);
+
+		setTimeout(function(){
+			console.log('hello world');
+		},1000);
+
+		const tombol = document.querySelector('.submit');
+
+		tombol.addEventListener('click',function(){
+			console.log('tombol ditekan!');
+		});
+
+		// HOF = ucapkanSalam
+		function ucapkanSalam(waktu){
+			return function(nama){
+				console.log(`Halo ${nama}, Selamat ${waktu}, semoga hari menyenangkan!`);
+			}
+		}
+
+		let selamatMalam = ucapkanSalam('Malam');
+
+		console.dir(selamatMalam('Riventus'));
+
+		let total =0, count=1;
+		while (count <= 10){
+			total += count;
+			count++;
+		}
+
+		console.log(total);
+
+		function repeatLog(n){
+			for (let i=0; i < n; i++){
+				console.log(i);
+			}
+		}
+
+		repeatLog(10);		
+
+		function repeat(n,action){
+			for (let i=0; i < n; i++){
+				action(i);
+			}
+		}
+
+		repeat(10,console.log);
+		repeat(3,alert);
+
+
+		// contol pengelolaan array 
+		// HOF 
+		Array.prototype.map() // utk mapping pada array
+		Array.prototype.filter() // utk mapping pada menyeleksi isi array
+		Array.prototype.reduce() // utk mapping pada menhapus isi array
+	</script>
+</body>
+</html>
