@@ -17,29 +17,6 @@ function stringify_baru(obj) {
 let params = {
     s:'avengers'
 };
-// const ambildata = fetch(`${URLAPI}${apiKey}&${stringify_baru(params)}`,{
-//         method:"GET",
-//     })
-//     .then(resp => resp) // Transform the data into json
-//     .then(function(data) {
-//         // Create and append the li's to the ul 
-//     })
-
-
-// // console.log(ambildata); 
-
-// $.ajax({
-//     // url:'http://sca.co.id:1000/ws/MTOM.asmx/top_buku_dipinjam_ddc?limit=15&start_date=2019-12-01&end_date=2019-12-24',
-//     url:'http://www.omdbapi.com/?apikey=e5a0ca0f&s=harry potter',
-//     success: resp => {
-//         const movies = resp.Search;
-//         console.log(movies);
-//     },
-//     error:(e) => {
-//         // jika error
-//         console.error(e.responseText);
-//     }
-// });
 
 async function getDataOMDb(endpoint,options={}) {
     const res = await fetch(endpoint,options);
@@ -91,33 +68,36 @@ const showCardDetail = data => {
     </div>`);
 }
 
-// Searching movie
-$('.search-button').on('click',function(){
-    let params = {s:$('.input-keyword').val()};
+const searchButton = document.querySelector('.search-button');
+searchButton.addEventListener('click',function(){
+    let params = {s:document.querySelector('.input-keyword').value};
     getDataOMDb(`${URLAPI}${apiKey}&${stringify_baru(params)}`,{
         method:"GET",
         headers:new Headers({})
     })
     .then(data => {
-      const movies = data.Search;
-      let cards = '';
-      movies.forEach(m => {
+        const movies = data.Search;
+        let cards = '';
+        movies.forEach(m => {
         cards += showCards(m);
-      });
+        });
 
-      $('.movie-container').html(cards);
-      
-      // ketika tombol detail diklik
-      $('.modal-detail-button').on('click',function(){
-        getDataOMDbDetails(`${URLAPI}${apiKey}&${stringify_baru({i:$(this).data('imdbid')})}`,{
-            method:"GET",
-            headers:new Headers({})
-        }).then(data=> {
-            const movieDetail = showCardDetail(data);
-            $('.modal-body').html(movieDetail);
-        }).catch(err => console.log('Ooops, error', err.responseText));
-      });
-      
+        document.querySelector('.movie-container').innerHTML = cards;
+            
+        // ketika tombol detail diklik
+        const modalDetaiButton = document.querySelectorAll('.modal-detail-button');
+        modalDetaiButton.forEach(btn => {
+            btn.addEventListener('click',function(){
+                const imdbid = this.dataset.imdbid;
+                getDataOMDbDetails(`${URLAPI}${apiKey}&${stringify_baru({i:imdbid})}`,{
+                    method:"GET",
+                    headers:new Headers({})
+                }).then(data=> {
+                    const movieDetail = showCardDetail(data);
+                    document.querySelector('.modal-body').innerHTML = movieDetail;
+                }).catch(err => console.log('Ooops, error', err.responseText));
+            });
+        });
     })
     .catch(err => console.log('Ooops, error', err.message));
 });

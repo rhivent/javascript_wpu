@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>async_await.html</title>
+</head>
+<body>
+    <h1>Async Await</h1>
+    <p><em>
+        Asyncronous function 
+        "sebuah function yang bekerja secara asyncronous (melalui event loop), yang menghasilkan (implisit) promise sebagai return value-nya, tapi cara penulisan code-nya menggunakan penulisan yang syncronous (standard)."
+    </em></p>
+
+    <ul>
+        <li>Fungsi yg berjalan secara asyncronous</li>
+        <li>Menghasilkan (implisit promise)</li>
+        <li>Cara penulisannya sama seperti syncronous function (function biasa)</li>
+    </ul>
+
+    <p><kbd>Sebuah async function dapat memiliki keyword await di dalamnya utk memberhentikan semetara eksekusi fungsinya sambil menunggu promisenya selesai.</kbd></p>
+
+    <p>Contoh :</p>
+    <pre>
+        <code>
+            const cobaPromise = () => {
+                return new Promise((resolve,reject) => {
+                    const waktu = 7000;
+                    if(waktu < 5000){
+                        setTimeout( () => {
+                            resolve('selesai');
+                        },waktu);
+                    }else{
+                        reject('lamaa!');
+                    }
+                });
+            }
+            
+            // const coba = cobaPromise();
+            // coba.then(() => console.log(coba)).catch(() => console.log(coba));
+            
+            async function cobaAsync() {
+            
+                try {
+                    const coba = await cobaPromise();
+                    console.log(coba);
+                } catch (error) {
+                    console.error(error);
+                }
+            }
+            
+            cobaAsync();
+        </code>
+    </pre>
+
+
+    <script src="async_await.js"></script>
+</body>
+</html>

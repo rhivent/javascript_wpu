@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+</head>
+<body>
+    <h1>Belajar Promise</h1>
+    <p>Promise adalah sebuah object yang merepresentasikan keberhasilan / kegagalan sebuah event yg asynchronous yg akan terjadi di masa akan datang</p>
+
+    <p>Janji terpenuhi atau janji teringkari</p>
+    <p>keadaan di Promise = states(fulfilled / rejected / pending)</p>
+    <p>Callback = resolve => dibuat ketika janji terpenuhi
+        reject => dibuat ketika janji tidak terpenuhi
+        finally => dibuat ketika waktu tunggu selesai baik itu janji dipenuhi atau tidak dipenuhi
+    </p>
+
+    <p>Di dlm promise ada aksi yg akan kita berikan ketika janji terpenuhi ada aksi "then" sedangkan tidak terpenuhi ada aksi "catch"</p>
+
+    <p>Promise di berikan biasanya ketika kita request ke sebuah API</p>
+    
+    <p>contoh 1</p>
+    <pre>
+        <code>
+            let ditepati = true;
+            const janji1 = new Promise((resolve,reject) => {
+                if(ditepati){
+                    resolve('Janji telah di tepati');
+                }else{
+                    reject('ingkar janji');
+                }
+            });
+
+            janji1
+            .then(response => console.log(`OK : ${response}`))
+            .catch(response => console.log(`NOT OK: ${response}`));
+        </code>
+    </pre>
+
+    <p>contoh 2</p>
+    <pre>
+        <code>
+            let ditepati2 = true;
+            const janji2 = new Promise((resolve,reject) => {
+                if(ditepati2){
+                    setTimeout( () => {
+                        resolve('Ditepati tpi beberapa waktu tunggu ... ');
+                    },2000);
+                }else{
+                    setTimeout( () => {
+                        reject('Tidak Ditepati tpi tunggu beberapa waktu ... ');
+                    },2000);
+                }
+            });
+
+            console.log('mulai');
+            // console.log(janji2.then(() => console.log(janji2)) );
+            janji2
+            .finally(() => console.log('selesai menunggu!'))
+            .then(response => console.log(`OK : ${response}`))
+            .catch(response => console.log(`NOT OK: ${response}`));
+            console.log('selesai');
+        </code>
+    </pre>
+    <kbd>finally</kbd><span>Diajalankan ketika salah satu dari then atau catch tsb sudah siap dijalankan artinya method finally dulu baru then atau catch</span>
+    <p>ketika promise sudah tidak pending lagi maka finally dulu dijalankan kemudian salah satu dari then atau catch</p>
+    <p>implementasi finally ketika loading animasi, jadi ketika waktu tunggu maka jalankan animasi loading, ketika sudah selesai menunngu maka method finally dijalankan utk mematikan animasi loadingnya</p>
+
+
+    <h6>Promise.all</h6>
+    <p>ketika kita menjalankan beberapa promise dalam 1 waktu secara bersamaan</p>
+    <script
+    src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="promise.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <title>Riventus Movie OMDb</title>
+  </head>
+  <body>
+
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col">
+                <h1>Riventus Movie DB</h1>
+            </div>
+        </div>
+        <h5>fetch(resources,init)</h5>
+        <p><em>Sebuah method pada API javascript utk mengambil <b>resources</b> dari jaringan dan mengembalikan <b>promise</b> yang selesai (<b>fullfilled</b>) ketika ada <b>response</b> yang tersedia</em></p>
+        
+        <h6>resources</h6>
+        <ul>
+            <li>URL
+                <p>Alamat dari sumber yang kita akan ambil</p>
+            </li>
+            <li>Request Object
+                <p>Representasi permintaan sumber</p>
+            </li>
+        </ul>
+
+        <h6>init (optional)</h6>
+        <p>konfigurasi tambahan pada sebuah request berbentuk object</p>
+        <ul>
+            <li><b>method</b></li>
+            <li><b>headers</b></li>
+            <li><b>body</b></li>
+            <li><b>mode</b></li>
+            <li><b>cache</b></li>
+            <li><b>referrer</b></li>
+            <li><b>referrerPolicy</b></li>
+            <li><b>integrity</b></li>
+            <li><b>keepalive</b></li>
+            <li><b>signal</b></li>
+        </ul>
+
+        <h6>response (property)</h6>
+        <ul>
+            <li><b>headers</b></li>
+            <li><b>ok</b></li>
+            <li><b>redirected</b></li>
+            <li><b>status</b></li>
+            <li><b>statusText</b></li>
+            <li><b>type</b></li>
+            <li><b>url</b></li>
+            <li><b>body</b></li>
+        </ul>
+
+        <h6>response (method)</h6>
+        <ul>
+            <li><b>clone()</b></li>
+            <li><b>error()</b></li>
+            <li><b>redirect()</b></li>
+            <li><b>blob()</b></li> ==> binary large object : mengembalikan promise juga
+            <li><b>formData()</b></li>
+            <li><b>json()</b></li> ==> btknya promise
+            <li><b>text()</b></li>
+        </ul>
+        <div class="row">
+            <div class="col-md-8">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control input-keyword" placeholder="Search movie ...">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary search-button" type="button">Search</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row movie-container"></div>
+
+    </div>
+
+    <!-- AWAL MODAL -->
+    <div class="modal fade" id="moviedetailsModal" tabindex="-1" role="dialog" aria-labelledby="moviedetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="moviedetailsModalLabel">Modal title</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+    src="http://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="fetch.js"></script>
+  </body>
+</html>
